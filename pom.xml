@@ -157,5 +157,6 @@
     <module>openvpn-be</module>
     <module>openvpn-fe-swing</module>
     <module>openvpn-fe-fx</module>
+    <module>cli-adapter</module>
   </modules>
 </project>
