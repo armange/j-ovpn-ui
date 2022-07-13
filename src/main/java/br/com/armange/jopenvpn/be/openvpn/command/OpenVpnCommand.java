@@ -15,7 +15,7 @@ public enum OpenVpnCommand {
     LIST_CONFIGS(LazyCommandRunnerConstructor.prepareConstructor(ConfigsListCommandRunner.class)),
     DISCONNECT_SESSION_BY_PATH(LazyCommandRunnerConstructor.prepareConstructor(SessionDisconnectByPathCommandRunner.class)),
 
-    REMOVE_CONFIG_BY_PATH(LazyCommandRunnerConstructor.prepareConstructor(ConfigsRemoveCommandRunner.class)),
+    REMOVE_CONFIG_BY_PATH(LazyCommandRunnerConstructor.prepareConstructor(ConfigRemoveCommandRunner.class)),
     ;
 
     private final Function<String[], ?> preparedCommandRunner;

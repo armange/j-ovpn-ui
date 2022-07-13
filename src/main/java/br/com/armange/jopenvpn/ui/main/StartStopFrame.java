@@ -42,6 +42,8 @@ public class StartStopFrame implements Serializable {
     private JCheckBox chkPreAuth;
     private JCheckBox chkSavePass;
 
+    private String lastSelectedProfile;
+
     public StartStopFrame() {
         setup();
     }
@@ -88,6 +90,7 @@ public class StartStopFrame implements Serializable {
 
             assert selectedItem != null;
 
+            lastSelectedProfile = selectedItem.getConfigName();
             findPreferences(selectedItem);
             findOvpnConfig(selectedItem);
         };
@@ -103,6 +106,16 @@ public class StartStopFrame implements Serializable {
         final OpenVpnConfigDtoModel aModel = new OpenVpnConfigDtoModel(profiles);
 
         cbbProfile.setModel(aModel);
+
+        if (lastSelectedProfile != null) {
+            for (OpenVpnConfigDto dto : profiles) {
+                if (lastSelectedProfile.equals(dto.getConfigName())) {
+                    cbbProfile.setSelectedIndex(profiles.indexOf(dto));
+                    break;
+                }
+            }
+        }
+
         findOvpnConfig((ConfigDtoComboItem) cbbProfile.getSelectedItem());
     }
 
@@ -183,7 +196,7 @@ public class StartStopFrame implements Serializable {
         if (chkSavePass.isSelected()) {
             node.putBoolean(chkSavePass.getName(), chkSavePass.isSelected());
             node.put(txtUsername.getName(), txtUsername.getText());
-            node.put(txtPassword.getName(), Arrays.toString(txtPassword.getPassword()));
+            node.put(txtPassword.getName(), new String(txtPassword.getPassword()));
         } else {
             node.remove(chkSavePass.getName());
             node.remove(txtUsername.getName());
