@@ -12,7 +12,7 @@ public class ConfigsCardFrame extends AbstractUIFrameIJ {
     private final NewConfigFrame newConfigFrame;
 
     private JPanel pnlConfigsCard;
-    private CardLayout cardLayout;
+    private final CardLayout cardLayout;
 
     public ConfigsCardFrame(final ConfigsFrame configsFrame,
                             final NewConfigFrame newConfigFrame) {

@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+          
   <modelVersion>4.0.0</modelVersion>
-
+  
   <groupId>br.com.armange</groupId>
   <artifactId>jopenvpn-ui</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-
+  <packaging>pom</packaging>
   <name>jopenvpn-ui</name>
   <description>jopenvpn-ui.</description>
-
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -24,25 +22,25 @@
       <version>1.18.24</version>
       <scope>provided</scope>
     </dependency>
-
+    
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.32</version>
     </dependency>
-
+    
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.32</version>
     </dependency>
-
+    
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <version>31.1-jre</version>
     </dependency>
-
+    
     <dependency>
       <groupId>com.intellij</groupId>
       <artifactId>javac2</artifactId>
@@ -56,13 +54,14 @@
           <groupId>asm</groupId>
           <artifactId>asm-tree</artifactId>
         </exclusion>
+        
         <exclusion>
           <groupId>asm</groupId>
           <artifactId>asm</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
-
+    
     <dependency>
       <groupId>com.intellij</groupId>
       <artifactId>forms_rt</artifactId>
@@ -72,17 +71,19 @@
           <groupId>asm</groupId>
           <artifactId>asm-commons</artifactId>
         </exclusion>
+        
         <exclusion>
           <groupId>asm</groupId>
           <artifactId>asm-tree</artifactId>
         </exclusion>
+        
         <exclusion>
           <groupId>asm</groupId>
           <artifactId>asm</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
-
+    
     <dependency>
       <groupId>com.github.hypfvieh</groupId>
       <artifactId>dbus-java-core</artifactId>
@@ -132,6 +133,7 @@
             </manifest>
           </archive>
         </configuration>
+
         <executions>
           <execution>
             <id>make-assembly</id>
@@ -149,4 +151,11 @@
     <plugins>
     </plugins>
   </reporting>
+
+  <modules>
+    <module>openvpn-be-api</module>
+    <module>openvpn-be</module>
+    <module>openvpn-fe-swing</module>
+    <module>openvpn-fe-fx</module>
+  </modules>
 </project>

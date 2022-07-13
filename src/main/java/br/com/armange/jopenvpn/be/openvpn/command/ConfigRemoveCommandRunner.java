@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RequiredArgsConstructor
-class ConfigsRemoveCommandRunner implements PreparedCommandRunner {
+class ConfigRemoveCommandRunner implements PreparedCommandRunner {
 
     private final CommandRunner commandRunner;
     private final String path;

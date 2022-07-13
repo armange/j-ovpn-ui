@@ -28,7 +28,7 @@ public class NewConfigFrame extends AbstractUIFrameIJ {
     private JLabel lblFile;
     private JPanel pnlNewConfig;
     private JButton btnBack;
-    private JFileChooser fileChooser = new JFileChooser();
+    private final JFileChooser fileChooser = new JFileChooser();
 
     private final ConfigsFrame configsFrame;
 
